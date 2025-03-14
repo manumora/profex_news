@@ -20,6 +20,9 @@ try:
     # Buscar el contenedor principal
     target_div = soup.find("div", class_="portlet-boundary portlet-boundary_101_ portlet-static portlet-static-end portlet-borderless portlet-asset-publisher")
     
+    # Obtener la fecha actual para comparar
+    fecha_actual = datetime.now().strftime("%d/%m/%Y")
+    
     # Generar HTML personalizado
     html_content = f"""
     <!DOCTYPE html>
@@ -37,6 +40,7 @@ try:
                 --background-secondary: #f5f5f7;
                 --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
                 --transition: all 0.3s ease;
+                --highlight-color: #ff3b30;
             }}
             
             * {{
@@ -55,7 +59,7 @@ try:
             }}
             
             .container {{
-                max-width: 800px;
+                max-width: 1000px;
                 margin: 0 auto;
                 padding: 40px 20px;
             }}
@@ -88,15 +92,20 @@ try:
             .noticia {{ 
                 background: var(--background-primary);
                 border-radius: 12px;
-                padding: 20px;
+                padding: 24px;
                 transition: var(--transition);
                 box-shadow: var(--card-shadow);
                 border: 1px solid rgba(0,0,0,0.04);
+                width: 100%;
             }}
             
             .noticia:hover {{
                 transform: translateY(-2px);
                 box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+            }}
+            
+            .noticia-destacada {{
+                border: 2px solid var(--highlight-color);
             }}
             
             .info-linea {{
@@ -149,6 +158,7 @@ try:
                     --background-primary: #1d1d1f;
                     --background-secondary: #000000;
                     --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+                    --highlight-color: #ff453a;
                 }}
             }}
         </style>
@@ -175,6 +185,10 @@ try:
                 fecha_elem = noticia.find("span", class_="fecha")
                 fecha = fecha_elem.text.strip() if fecha_elem else "Sin fecha"
                 
+                # Verificar si la fecha coincide con la fecha actual
+                es_noticia_hoy = fecha_actual in fecha
+                destacada_class = ' noticia-destacada' if es_noticia_hoy else ''
+                
                 # Extraer enlace y contenido
                 enlace_elem = noticia.find("a", class_="contenido-noticia")
                 
@@ -193,7 +207,7 @@ try:
                     titulo = titulo_elem.text.strip() if titulo_elem else "Sin título"
                     
                     html_content += f"""
-                    <div class="noticia">
+                    <div class="noticia{destacada_class}">
                         <div class="info-linea">
                             <div class="fecha">{fecha}</div>
                             <div class="separador">•</div>
