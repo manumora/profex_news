@@ -187,7 +187,7 @@ try:
                 
                 # Verificar si la fecha coincide con la fecha actual
                 es_noticia_hoy = fecha_actual in fecha
-                destacada_class = ' noticia-destacada' if es_noticia_hoy else ''
+                destacada_class = ' noticia-destacada' if True else ''
                 
                 # Extraer enlace y contenido
                 enlace_elem = noticia.find("a", class_="contenido-noticia")
