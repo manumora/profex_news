@@ -221,7 +221,7 @@ try:
     """
 
     # Guardar el archivo
-    output_path = os.path.join(output_dir, "profex_noticias.html")
+    output_path = os.path.join(output_dir, "profex.html")
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(html_content)
     
