@@ -6,7 +6,7 @@ import os
 # Configuración
 url = "https://profex.educarex.es/"
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}
-output_dir = "./"
+output_dir = "/var/www/html/"
 
 # Crear el directorio de salida si no existe
 os.makedirs(output_dir, exist_ok=True)
