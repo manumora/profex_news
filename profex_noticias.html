@@ -1,0 +1,241 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Noticias Profex</title>
+        <style>
+            :root {
+                --primary-color: #0071e3;
+                --text-primary: #1d1d1f;
+                --text-secondary: #86868b;
+                --background-primary: #ffffff;
+                --background-secondary: #f5f5f7;
+                --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                --transition: all 0.3s ease;
+            }
+            
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body { 
+                font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+                margin: 0; 
+                padding: 0;
+                background: var(--background-secondary);
+                color: var(--text-primary);
+                line-height: 1.5;
+            }
+            
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 40px 20px;
+            }
+            
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            
+            h1 {
+                font-weight: 600;
+                font-size: 32px;
+                letter-spacing: -0.5px;
+                color: var(--text-primary);
+                margin-bottom: 16px;
+            }
+            
+            .actualizado { 
+                color: var(--text-secondary);
+                font-size: 14px;
+                font-weight: 400;
+            }
+            
+            .noticias-grid {
+                display: grid;
+                gap: 16px;
+                grid-template-columns: 1fr;
+            }
+            
+            .noticia { 
+                background: var(--background-primary);
+                border-radius: 12px;
+                padding: 20px;
+                transition: var(--transition);
+                box-shadow: var(--card-shadow);
+                border: 1px solid rgba(0,0,0,0.04);
+            }
+            
+            .noticia:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+            }
+            
+            .info-linea {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+            
+            .fecha {
+                color: var(--text-secondary);
+                font-size: 14px;
+                font-weight: 500;
+            }
+            
+            .separador {
+                margin: 0 8px;
+                color: var(--text-secondary);
+            }
+            
+            .categoria {
+                color: var(--primary-color);
+                font-weight: 600;
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            
+            .titulo { 
+                color: var(--text-primary);
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1.4;
+            }
+            
+            @media (min-width: 768px) {
+                .noticias-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                
+                h1 {
+                    font-size: 36px;
+                }
+            }
+            
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --primary-color: #2997ff;
+                    --text-primary: #f5f5f7;
+                    --text-secondary: #a1a1a6;
+                    --background-primary: #1d1d1f;
+                    --background-secondary: #000000;
+                    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Noticias PROFEX</h1>
+                <div class="actualizado">Actualizado: 14/03/2025 14:13</div>
+            </div>
+            <div class="noticias-grid">
+    
+                    <div class="noticia">
+                        <div class="info-linea">
+                            <div class="fecha">12/03/25</div>
+                            <div class="separador">•</div>
+                            <div class="categoria">Catedráticos</div>
+                        </div>
+                        <div class="titulo">Publicado Baremo definitivo</div>
+                    </div>
+                    
+                    <div class="noticia">
+                        <div class="info-linea">
+                            <div class="fecha">11/03/25</div>
+                            <div class="separador">•</div>
+                            <div class="categoria">Plantilla Orgánica</div>
+                        </div>
+                        <div class="titulo">Corrección de errores de la Resolución de 10 de febrero de 2025 sobre plantilla orgánica con carácter definitivo</div>
+                    </div>
+                    
+                    <div class="noticia">
+                        <div class="info-linea">
+                            <div class="fecha">11/03/25</div>
+                            <div class="separador">•</div>
+                            <div class="categoria">Concurso de Traslados</div>
+                        </div>
+                        <div class="titulo">Publicada la adjudicación provisional de destinos del personal funcionario del cuerpo de Maestros</div>
+                    </div>
+                    
+                    <div class="noticia">
+                        <div class="info-linea">
+                            <div class="fecha">21/02/25</div>
+                            <div class="separador">•</div>
+                            <div class="categoria">Constitución de Listas Extraordinarias</div>
+                        </div>
+                        <div class="titulo">Publicada la convocatoria de listas de espera extraordinarias para determinadas especialidades</div>
+                    </div>
+                    
+                    <div class="noticia">
+                        <div class="info-linea">
+                            <div class="fecha">21/02/25</div>
+                            <div class="separador">•</div>
+                            <div class="categoria">Normativa</div>
+                        </div>
+                        <div class="titulo">Actualizada la resolución de titulaciones para el desempeño de interinidades</div>
+                    </div>
+                    
+                    <div class="noticia">
+                        <div class="info-linea">
+                            <div class="fecha">18/02/25</div>
+                            <div class="separador">•</div>
+                            <div class="categoria">Personal suprimido de Maestros</div>
+                        </div>
+                        <div class="titulo">Publicado procedimiento para la determinación de los funcionarios de carrera del cuerpo de maestros en situación de supresión en el curso escolar 2025/2026.</div>
+                    </div>
+                    
+                    <div class="noticia">
+                        <div class="info-linea">
+                            <div class="fecha">18/02/25</div>
+                            <div class="separador">•</div>
+                            <div class="categoria">Llamamientos Urgentes</div>
+                        </div>
+                        <div class="titulo">Publicado Llamamiento urgente: 590006 / 590103 / 590115 / 590116 / 590118 / 590206 / 590214 / 598002 / 598010</div>
+                    </div>
+                    
+                    <div class="noticia">
+                        <div class="info-linea">
+                            <div class="fecha">18/02/25</div>
+                            <div class="separador">•</div>
+                            <div class="categoria">Concurso de Traslados</div>
+                        </div>
+                        <div class="titulo">Publicadas las listas del baremo definitivo del Concurso de Traslado del curso 2024-2025</div>
+                    </div>
+                    
+                    <div class="noticia">
+                        <div class="info-linea">
+                            <div class="fecha">11/02/25</div>
+                            <div class="separador">•</div>
+                            <div class="categoria">Llamamientos Urgentes</div>
+                        </div>
+                        <div class="titulo">Publicado Llamamiento Urgente: 590006 / 590206 / 590227 / 590231 / 590205 / 592015</div>
+                    </div>
+                    
+                    <div class="noticia">
+                        <div class="info-linea">
+                            <div class="fecha">10/02/25</div>
+                            <div class="separador">•</div>
+                            <div class="categoria">Plantilla Orgánica</div>
+                        </div>
+                        <div class="titulo">Publicadas las plantillas orgánicas definitivas en centros públicos de los diferentes cuerpos docentes de enseñanza no universitaria.</div>
+                    </div>
+                    
+            </div>
+        </div>
+        <script>
+            // Auto-refresh de la página cada 30 minutos
+            setTimeout(function() {
+                location.reload();
+            }, 30 * 60 * 1000);
+        </script>
+    </body>
+    </html>
+    
