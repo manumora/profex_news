@@ -7,6 +7,7 @@ import os
 url = "https://profex.educarex.es/"
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}
 output_dir = "/var/www/html/"
+output_dir = "./"
 
 # Crear el directorio de salida si no existe
 os.makedirs(output_dir, exist_ok=True)
@@ -17,11 +18,11 @@ try:
     response.raise_for_status()  # Verificar si la solicitud fue exitosa
     soup = BeautifulSoup(response.content, "html.parser")
     
+    # Fecha actual para comparar con las noticias
+    fecha_actual = datetime.now().strftime("%d/%m/%y")
+    
     # Buscar el contenedor principal
     target_div = soup.find("div", class_="portlet-boundary portlet-boundary_101_ portlet-static portlet-static-end portlet-borderless portlet-asset-publisher")
-    
-    # Obtener la fecha actual para comparar
-    fecha_actual = datetime.now().strftime("%d/%m/%Y")
     
     # Generar HTML personalizado
     html_content = f"""
@@ -40,7 +41,8 @@ try:
                 --background-secondary: #f5f5f7;
                 --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
                 --transition: all 0.3s ease;
-                --highlight-color: #ff3b30;
+                --highlight-color: rgba(255, 230, 0, 0.2);
+                --highlight-border: rgba(255, 200, 0, 0.5);
             }}
             
             * {{
@@ -59,7 +61,7 @@ try:
             }}
             
             .container {{
-                max-width: 1000px;
+                max-width: 800px;
                 margin: 0 auto;
                 padding: 40px 20px;
             }}
@@ -92,11 +94,10 @@ try:
             .noticia {{ 
                 background: var(--background-primary);
                 border-radius: 12px;
-                padding: 24px;
+                padding: 20px;
                 transition: var(--transition);
                 box-shadow: var(--card-shadow);
                 border: 1px solid rgba(0,0,0,0.04);
-                width: 100%;
             }}
             
             .noticia:hover {{
@@ -105,7 +106,8 @@ try:
             }}
             
             .noticia-destacada {{
-                border: 2px solid var(--highlight-color);
+                background: var(--highlight-color);
+                border: 1px solid var(--highlight-border);
             }}
             
             .info-linea {{
@@ -158,7 +160,8 @@ try:
                     --background-primary: #1d1d1f;
                     --background-secondary: #000000;
                     --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-                    --highlight-color: #ff453a;
+                    --highlight-color: rgba(255, 204, 0, 0.15);
+                    --highlight-border: rgba(255, 204, 0, 0.3);
                 }}
             }}
         </style>
@@ -186,8 +189,8 @@ try:
                 fecha = fecha_elem.text.strip() if fecha_elem else "Sin fecha"
                 
                 # Verificar si la fecha coincide con la fecha actual
-                es_noticia_hoy = fecha_actual in fecha
-                destacada_class = ' noticia-destacada' if True else ''
+                es_hoy = fecha.startswith(fecha_actual)
+                clase_destacada = "noticia-destacada" if es_hoy else ""
                 
                 # Extraer enlace y contenido
                 enlace_elem = noticia.find("a", class_="contenido-noticia")
@@ -207,7 +210,7 @@ try:
                     titulo = titulo_elem.text.strip() if titulo_elem else "Sin título"
                     
                     html_content += f"""
-                    <div class="noticia{destacada_class}">
+                    <div class="noticia {clase_destacada}">
                         <div class="info-linea">
                             <div class="fecha">{fecha}</div>
                             <div class="separador">•</div>
