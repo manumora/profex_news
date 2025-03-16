@@ -61,17 +61,18 @@ try:
             }}
             
             .container {{
-                max-width: 800px;
+                max-width: 1400px;
                 margin: 0 auto;
                 padding: 40px 20px;
             }}
             
             .header {{
                 text-align: center;
-                margin-bottom: 40px;
+                margin-bottom: 25px;
             }}
             
             h1 {{
+                font-family: "Montserrat", sans-serif;
                 font-weight: 600;
                 font-size: 32px;
                 letter-spacing: -0.5px;
@@ -149,6 +150,7 @@ try:
                 
                 h1 {{
                     font-size: 36px;
+                    margin-bottom: 0px;
                 }}
             }}
             
