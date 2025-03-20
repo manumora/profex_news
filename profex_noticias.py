@@ -33,6 +33,8 @@ try:
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Noticias Profex</title>
         <style>
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+            
             :root {{
                 --primary-color: #0071e3;
                 --text-primary: #1d1d1f;
@@ -52,12 +54,15 @@ try:
             }}
             
             body {{ 
-                font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+                font-family: 'Inter', sans-serif;
                 margin: 0; 
                 padding: 0;
                 background: var(--background-secondary);
                 color: var(--text-primary);
                 line-height: 1.5;
+                background-image: url('background.png');
+                background-size: cover;
+                background-repeat: no-repeat;
             }}
             
             .container {{
@@ -72,7 +77,7 @@ try:
             }}
             
             h1 {{
-                font-family: "Montserrat", sans-serif;
+                font-family: 'Inter', sans-serif;
                 font-weight: 600;
                 font-size: 32px;
                 letter-spacing: -0.5px;
@@ -171,7 +176,7 @@ try:
     <body>
         <div class="container">
             <div class="header">
-                <h1>Noticias PROFEX</h1>
+                <h1>Noticias Profex</h1>
                 <div class="actualizado">Actualizado: {datetime.now().strftime("%d/%m/%Y %H:%M")}</div>
             </div>
             <div class="noticias-grid">
