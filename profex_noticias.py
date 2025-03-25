@@ -7,7 +7,7 @@ import os
 url = "https://profex.educarex.es/"
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}
 output_dir = "/var/www/html/"
-#output_dir = "./"
+output_dir = "./"
 
 # Crear el directorio de salida si no existe
 os.makedirs(output_dir, exist_ok=True)
@@ -66,7 +66,7 @@ try:
             }}
             
             .container {{
-                max-width: 1400px;
+                max-width: 1800px;
                 margin: 0 auto;
                 padding: 40px 20px;
             }}
@@ -79,10 +79,9 @@ try:
             h1 {{
                 font-family: 'Inter', sans-serif;
                 font-weight: 600;
-                font-size: 32px;
+                font-size: 38px;
                 letter-spacing: -0.5px;
                 color: var(--text-primary);
-                margin-bottom: 16px;
             }}
             
             .actualizado {{ 
@@ -124,7 +123,7 @@ try:
             
             .fecha {{
                 color: var(--text-secondary);
-                font-size: 14px;
+                font-size: 18px;
                 font-weight: 500;
             }}
             
@@ -136,14 +135,14 @@ try:
             .categoria {{
                 color: var(--primary-color);
                 font-weight: 600;
-                font-size: 14px;
+                font-size: 18px;
                 text-transform: uppercase;
                 letter-spacing: 0.5px;
             }}
             
             .titulo {{ 
                 color: var(--text-primary);
-                font-size: 16px;
+                font-size: 20px;
                 font-weight: 500;
                 line-height: 1.4;
             }}
