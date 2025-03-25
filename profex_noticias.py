@@ -60,7 +60,7 @@ try:
                 background: var(--background-secondary);
                 color: var(--text-primary);
                 line-height: 1.5;
-                background-image: url('background.png');
+                background-image: url('https://raw.githubusercontent.com/manumora/profex_news/refs/heads/main/background.png');
                 background-size: cover;
                 background-repeat: no-repeat;
             }}
