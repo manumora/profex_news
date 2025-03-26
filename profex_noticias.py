@@ -7,7 +7,7 @@ import os
 url = "https://profex.educarex.es/"
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}
 output_dir = "/var/www/html/"
-#output_dir = "./"
+output_dir = "./"
 
 # Crear el directorio de salida si no existe
 os.makedirs(output_dir, exist_ok=True)
@@ -63,10 +63,11 @@ try:
                 background-image: url('background.png');
                 background-size: cover;
                 background-repeat: no-repeat;
+                font-size: 18px;
             }}
             
             .container {{
-                max-width: 1400px;
+                max-width: 1000px;
                 margin: 0 auto;
                 padding: 40px 20px;
             }}
@@ -79,7 +80,7 @@ try:
             h1 {{
                 font-family: 'Inter', sans-serif;
                 font-weight: 600;
-                font-size: 32px;
+                font-size: 36px;
                 letter-spacing: -0.5px;
                 color: var(--text-primary);
                 margin-bottom: 16px;
@@ -87,20 +88,20 @@ try:
             
             .actualizado {{ 
                 color: var(--text-secondary);
-                font-size: 14px;
+                font-size: 16px;
                 font-weight: 400;
             }}
             
             .noticias-grid {{
                 display: grid;
-                gap: 16px;
+                gap: 20px;
                 grid-template-columns: 1fr;
             }}
             
             .noticia {{ 
                 background: var(--background-primary);
                 border-radius: 12px;
-                padding: 20px;
+                padding: 24px;
                 transition: var(--transition);
                 box-shadow: var(--card-shadow);
                 border: 1px solid rgba(0,0,0,0.04);
@@ -119,12 +120,12 @@ try:
             .info-linea {{
                 display: flex;
                 align-items: center;
-                margin-bottom: 10px;
+                margin-bottom: 12px;
             }}
             
             .fecha {{
                 color: var(--text-secondary);
-                font-size: 14px;
+                font-size: 16px;
                 font-weight: 500;
             }}
             
@@ -136,27 +137,16 @@ try:
             .categoria {{
                 color: var(--primary-color);
                 font-weight: 600;
-                font-size: 14px;
+                font-size: 16px;
                 text-transform: uppercase;
                 letter-spacing: 0.5px;
             }}
             
             .titulo {{ 
                 color: var(--text-primary);
-                font-size: 16px;
+                font-size: 20px;
                 font-weight: 500;
                 line-height: 1.4;
-            }}
-            
-            @media (min-width: 768px) {{
-                .noticias-grid {{
-                    grid-template-columns: repeat(2, 1fr);
-                }}
-                
-                h1 {{
-                    font-size: 36px;
-                    margin-bottom: 0px;
-                }}
             }}
             
             @media (prefers-color-scheme: dark) {{
@@ -176,7 +166,7 @@ try:
     <body>
         <div class="container">
             <div class="header">
-                <h1>Noticias Profex</h1>
+                <h1>Últimas noticias - Profex</h1>
                 <div class="actualizado">Actualizado: {datetime.now().strftime("%d/%m/%Y %H:%M")}</div>
             </div>
             <div class="noticias-grid">
@@ -189,6 +179,9 @@ try:
         if news_list:
             # Obtener todas las noticias (elementos li)
             noticias = news_list.find_all("li", class_="d-table")
+            
+            # Limitar a mostrar solo las 5 últimas noticias
+            noticias = noticias[:5]
             
             for noticia in noticias:
                 # Extraer fecha
