@@ -60,14 +60,14 @@ try:
                 background: var(--background-secondary);
                 color: var(--text-primary);
                 line-height: 1.5;
-                background-image: url('background.png');
+                background-image: url('https://raw.githubusercontent.com/manumora/profex_news/refs/heads/main/background.png');
                 background-size: cover;
                 background-repeat: no-repeat;
                 font-size: 18px;
             }}
             
             .container {{
-                max-width: 1000px;
+                max-width: 1200px;
                 margin: 0 auto;
                 padding: 40px 20px;
             }}
@@ -80,10 +80,9 @@ try:
             h1 {{
                 font-family: 'Inter', sans-serif;
                 font-weight: 600;
-                font-size: 36px;
+                font-size: 38px;
                 letter-spacing: -0.5px;
                 color: var(--text-primary);
-                margin-bottom: 16px;
             }}
             
             .actualizado {{ 
@@ -125,7 +124,7 @@ try:
             
             .fecha {{
                 color: var(--text-secondary);
-                font-size: 16px;
+                font-size: 18px;
                 font-weight: 500;
             }}
             
@@ -137,7 +136,7 @@ try:
             .categoria {{
                 color: var(--primary-color);
                 font-weight: 600;
-                font-size: 16px;
+                font-size: 18px;
                 text-transform: uppercase;
                 letter-spacing: 0.5px;
             }}
