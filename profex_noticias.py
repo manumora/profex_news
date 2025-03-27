@@ -112,6 +112,7 @@ try:
             }}
             
             .noticia-destacada {{
+                color: red;
                 background: var(--highlight-color);
                 border: 1px solid var(--highlight-border);
             }}
