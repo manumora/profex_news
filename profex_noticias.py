@@ -7,7 +7,7 @@ import os
 url = "https://profex.educarex.es/"
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"}
 output_dir = "/var/www/html/"
-#output_dir = "./"
+output_dir = "./"
 
 # Crear el directorio de salida si no existe
 os.makedirs(output_dir, exist_ok=True)
@@ -118,6 +118,20 @@ try:
             .noticia-destacada {{
                 background: rgba(255, 200, 200, 0.9);
                 border: 1px solid rgba(255, 150, 150, 0.8);
+                animation: blink 1.5s infinite alternate;
+            }}
+            
+            @keyframes blink {{
+                0% {{ 
+                    background: rgba(255, 160, 160, 0.95);
+                    box-shadow: 0 0 12px rgba(255, 80, 80, 0.9);
+                    transform: scale(1.02);
+                }}
+                100% {{ 
+                    background: rgba(255, 230, 230, 0.7);
+                    box-shadow: 0 0 20px rgba(255, 100, 100, 0.5);
+                    transform: scale(1);
+                }}
             }}
             
             .info-linea {{

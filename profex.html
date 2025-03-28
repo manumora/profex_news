@@ -91,6 +91,20 @@
             .noticia-destacada {
                 background: rgba(255, 200, 200, 0.9);
                 border: 1px solid rgba(255, 150, 150, 0.8);
+                animation: blink 1.5s infinite alternate;
+            }
+            
+            @keyframes blink {
+                0% { 
+                    background: rgba(255, 160, 160, 0.95);
+                    box-shadow: 0 0 12px rgba(255, 80, 80, 0.9);
+                    transform: scale(1.02);
+                }
+                100% { 
+                    background: rgba(255, 230, 230, 0.7);
+                    box-shadow: 0 0 20px rgba(255, 100, 100, 0.5);
+                    transform: scale(1);
+                }
             }
             
             .info-linea {
@@ -143,10 +157,46 @@
         <div class="container">
             <div class="header">
                 <h1>Últimas noticias - Profex</h1>
-                <div class="actualizado">Actualizado: 27/03/2025 10:30</div>
+                <div class="actualizado">Actualizado: 28/03/2025 11:24</div>
             </div>
             <div class="noticias-grid">
     
+                    <div class="noticia noticia-destacada">
+                        <div class="info-linea">
+                            <div class="fecha">28/03/25</div>
+                            <div class="separador">•</div>
+                            <div class="categoria">Convocatoria Oposiciones</div>
+                        </div>
+                        <div class="titulo">Publicación de la resolución de composición de baremación de méritos (oposición e interinos)</div>
+                    </div>
+                    
+                    <div class="noticia ">
+                        <div class="info-linea">
+                            <div class="fecha">27/03/25</div>
+                            <div class="separador">•</div>
+                            <div class="categoria">Convocatoria Oposiciones</div>
+                        </div>
+                        <div class="titulo">Listados de personas candidatas a ser integrantes de los Órganos de selección</div>
+                    </div>
+                    
+                    <div class="noticia ">
+                        <div class="info-linea">
+                            <div class="fecha">27/03/25</div>
+                            <div class="separador">•</div>
+                            <div class="categoria">Constitución de Listas Extraordinarias</div>
+                        </div>
+                        <div class="titulo">Corrección de errores en la composición del tribunal de Listas Extraordinarias</div>
+                    </div>
+                    
+                    <div class="noticia ">
+                        <div class="info-linea">
+                            <div class="fecha">27/03/25</div>
+                            <div class="separador">•</div>
+                            <div class="categoria">Constitución de Listas Extraordinarias</div>
+                        </div>
+                        <div class="titulo">Corrección de errores en la composición de la Comisión de baremación de Listas Extraordinarias</div>
+                    </div>
+                    
                     <div class="noticia ">
                         <div class="info-linea">
                             <div class="fecha">21/03/25</div>
@@ -154,42 +204,6 @@
                             <div class="categoria">Constitución de Listas Extraordinarias</div>
                         </div>
                         <div class="titulo">Celebración prueba práctica listas extraordinarias</div>
-                    </div>
-                    
-                    <div class="noticia ">
-                        <div class="info-linea">
-                            <div class="fecha">21/03/25</div>
-                            <div class="separador">•</div>
-                            <div class="categoria">Constitución de Listas Extraordinarias</div>
-                        </div>
-                        <div class="titulo">Publicada Composición de Comisión de Baremación de listas extraordinarias</div>
-                    </div>
-                    
-                    <div class="noticia ">
-                        <div class="info-linea">
-                            <div class="fecha">21/03/25</div>
-                            <div class="separador">•</div>
-                            <div class="categoria">Convocatoria Oposiciones</div>
-                        </div>
-                        <div class="titulo">Convocatoria Oposiciones, Lista de espera ordinarias</div>
-                    </div>
-                    
-                    <div class="noticia ">
-                        <div class="info-linea">
-                            <div class="fecha">12/03/25</div>
-                            <div class="separador">•</div>
-                            <div class="categoria">Catedráticos</div>
-                        </div>
-                        <div class="titulo">Publicado Baremo definitivo</div>
-                    </div>
-                    
-                    <div class="noticia ">
-                        <div class="info-linea">
-                            <div class="fecha">11/03/25</div>
-                            <div class="separador">•</div>
-                            <div class="categoria">Plantilla Orgánica</div>
-                        </div>
-                        <div class="titulo">Corrección de errores de la Resolución de 10 de febrero de 2025 sobre plantilla orgánica con carácter definitivo</div>
                     </div>
                     
             </div>
