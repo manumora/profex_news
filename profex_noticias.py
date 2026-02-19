@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime
+from datetime import datetime, timedelta
 import os
 
 # Configuración
@@ -18,8 +18,11 @@ try:
     response.raise_for_status()  # Verificar si la solicitud fue exitosa
     soup = BeautifulSoup(response.content, "html.parser")
     
-    # Fecha actual para comparar con las noticias
-    fecha_actual = datetime.now().strftime("%d/%m/%y")
+    # Fecha actual y próximas para comparar con las noticias
+    hoy = datetime.now()
+    fecha_hoy = hoy.strftime("%d/%m/%y")
+    fecha_manana = (hoy + timedelta(days=1)).strftime("%d/%m/%y")
+    fecha_pasado = (hoy + timedelta(days=2)).strftime("%d/%m/%y")
     
     # Buscar el contenedor principal
     target_div = soup.find("div", class_="portlet-boundary portlet-boundary_101_ portlet-static portlet-static-end portlet-borderless portlet-asset-publisher")
@@ -206,9 +209,9 @@ try:
                 fecha_elem = noticia.find("span", class_="fecha")
                 fecha = fecha_elem.text.strip() if fecha_elem else "Sin fecha"
                 
-                # Verificar si la fecha coincide con la fecha actual
-                es_hoy = fecha.startswith(fecha_actual)
-                clase_destacada = "noticia-destacada" if es_hoy else ""
+                # Verificar si la fecha coincide con la fecha actual, mañana o pasado
+                es_destacada = fecha.startswith(fecha_hoy) or fecha.startswith(fecha_manana) or fecha.startswith(fecha_pasado)
+                clase_destacada = "noticia-destacada" if es_destacada else ""
                 
                 # Extraer enlace y contenido
                 enlace_elem = noticia.find("a", class_="contenido-noticia")
