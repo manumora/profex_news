@@ -73,7 +73,7 @@ try:
             .container {{
                 max-width: 1200px;
                 margin: 0 auto;
-                padding: 40px 20px;
+                padding: 20px 20px;
             }}
             
             .header {{
@@ -82,11 +82,12 @@ try:
             }}
             
             h1 {{
-                font-family: 'Inter', sans-serif;
-                font-weight: 600;
-                font-size: 38px;
-                letter-spacing: -0.5px;
-                color: var(--text-primary);
+                text-align: center;
+                margin: 20px 0;
+                color: #1b4990;
+                font-size: 44px;
+                font-family: sans-serif;
+                font-weight: bold;
             }}
             
             .actualizado {{ 
